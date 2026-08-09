@@ -36,7 +36,7 @@ jobs:
           # Habilita o Pages automaticamente (caso ainda não esteja ativo)
           enablement: true
 
-      - name: Upload site artifact
+      - name: Upload site artifact 
         uses: actions/upload-pages-artifact@v3
         with:
           # Pasta que será publicada (onde está o index.html)
