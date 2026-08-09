@@ -1,33 +1,33 @@
 
-# Existem actions na comunidade no github marketplace e também existem no próprio repositório
+# # Existem actions na comunidade no github marketplace e também existem no próprio repositório
 
-name: CI/CD Pipeline
-# Condição
-on: 
-  push:
-    branches:
-      - main
+# name: CI/CD Pipeline
+# # Condição
+# on: 
+#   push:
+#     branches:
+#       - main
 
-# Serviços
-jobs:
-  # Etapa
-  build_and_deploy:
-    runs-on: ubuntu-latest
-    steps:
-      # Git clone do projeto e checkout para a branch referenciada (action existente)
-      - name: Checkout code
-        uses: actions/checkout@v4 # Usa uma action pronta
+# # Serviços
+# jobs:
+#   # Etapa
+#   build_and_deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       # Git clone do projeto e checkout para a branch referenciada (action existente)
+#       - name: Checkout code
+#         uses: actions/checkout@v4 # Usa uma action pronta
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '22'
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '22'
 
-      - name: Install Dependencies
-        run: npm install # Executa no terminal
-        working-directory: src
+#       - name: Install Dependencies
+#         run: npm install # Executa no terminal
+#         working-directory: src
 
-      - name: Zip Lambda source and dependencies
-        run: |
-          cd src
-          zip -r ../deployment.zip . -x "*.github*"
+#       - name: Zip Lambda source and dependencies
+#         run: |
+#           cd src
+#           zip -r ../deployment.zip . -x "*.github*"
