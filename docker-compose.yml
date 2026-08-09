@@ -1,0 +1,8 @@
+# Docker Compose usado pela action hostinger/deploy-on-vps@v2
+# Sobe um nginx que serve o site estático (pasta src/) na porta 80.
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    restart: unless-stopped
